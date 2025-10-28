@@ -23,7 +23,7 @@ const MessageContent = ({ content }: { content: MessageContentType }) => {
   switch (content.type) {
     case "text":
       return (
-        <p className="leading-relaxed whitespace-pre-wrap">
+        <p className="text-base leading-relaxed whitespace-pre-wrap">
           {content.text.split(/(@\w+)/).map((part, i) =>
             part.startsWith("@") ? (
               <span key={i} className="font-semibold text-accent">
@@ -41,10 +41,8 @@ const MessageContent = ({ content }: { content: MessageContentType }) => {
       return (
         <HeadingTag
           className={cn(
-            "font-bold",
-            content.level === 1 && "text-xl mt-4 mb-2",
-            content.level === 2 && "text-lg mt-3 mb-2",
-            content.level === 3 && "text-base mt-2 mb-1.5"
+            content.level === 1 && "text-xl font-bold mt-4 mb-2",
+            (content.level === 2 || content.level === 3) && "text-base font-bold mt-2 mb-1.5"
           )}
         >
           {content.text}
