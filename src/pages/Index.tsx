@@ -13,7 +13,7 @@ const Index = () => {
       const timer = setTimeout(() => {
         setDisplayedMessages((prev) => [...prev, chatMessages[currentIndex]]);
         setCurrentIndex((prev) => prev + 1);
-      }, 800);
+      }, 10000);
 
       return () => clearTimeout(timer);
     }
