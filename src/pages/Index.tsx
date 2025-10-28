@@ -35,9 +35,9 @@ const Index = () => {
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">Sales Team Chat</h1>
+              <h1 className="text-xl font-bold text-foreground">sales-performance-insights</h1>
               <p className="text-sm text-muted-foreground">
-                Powered by OWOX Analytics • Monday, Oct 27, 2025
+                Powered by OWOX Analytics • Tuesday, Oct 28
               </p>
             </div>
           </div>

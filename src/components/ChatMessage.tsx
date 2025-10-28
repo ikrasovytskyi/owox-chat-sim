@@ -1,6 +1,18 @@
 import { Message, SENDER_INFO } from "@/types/chat";
 import { cn } from "@/lib/utils";
 import { MessageContent as MessageContentType } from "@/types/chat";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import owoxLogo from "@/assets/owox-logo.png";
+import annaAvatar from "@/assets/anna-avatar.jpg";
+import ethanAvatar from "@/assets/ethan-avatar.jpg";
+import johnAvatar from "@/assets/john-avatar.jpg";
+
+const avatarMap: Record<string, string> = {
+  "owox-logo": owoxLogo,
+  "anna-avatar": annaAvatar,
+  "ethan-avatar": ethanAvatar,
+  "john-avatar": johnAvatar,
+};
 
 interface ChatMessageProps {
   message: Message;
@@ -126,17 +138,23 @@ export const ChatMessage = ({ message, isAnimating }: ChatMessageProps) => {
       )}
     >
       {/* Avatar */}
-      <div
-        className={cn(
-          "w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm flex-shrink-0",
-          `bg-${senderInfo.color}`
+      <Avatar className="w-10 h-10 flex-shrink-0 rounded-lg">
+        {senderInfo.avatar && (
+          <AvatarImage 
+            src={avatarMap[senderInfo.avatar]} 
+            alt={senderInfo.name}
+            className="object-cover"
+          />
         )}
-        style={{
-          backgroundColor: `hsl(var(--${senderInfo.color}))`,
-        }}
-      >
-        {message.sender.slice(0, 1)}
-      </div>
+        <AvatarFallback
+          className="rounded-lg text-white font-bold text-sm"
+          style={{
+            backgroundColor: `hsl(var(--${senderInfo.color}))`,
+          }}
+        >
+          {message.sender.slice(0, 1)}
+        </AvatarFallback>
+      </Avatar>
 
       {/* Message Content */}
       <div className="flex-1 min-w-0">

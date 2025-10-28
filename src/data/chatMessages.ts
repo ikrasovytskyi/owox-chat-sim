@@ -15,7 +15,14 @@ export const chatMessages: Message[] = [
           "2 regions showed below-average conversion rates",
           "Overall pipeline coverage: 92% of monthly goal"
         ]
-      },
+      }
+    ]
+  },
+  {
+    id: "2",
+    sender: "OWOX",
+    timestamp: "9:00 AM",
+    content: [
       { type: "heading", text: "Top 5 Highlights:", level: 2 },
       { type: "heading", text: "1. North America — Enterprise Deals", level: 3 },
       { type: "metric", label: "Revenue", value: "$482K", change: "+16% vs prev week", trend: "up" },
@@ -32,7 +39,14 @@ export const chatMessages: Message[] = [
       { type: "text", text: "Forecast accuracy gap widened –15%." },
       { type: "heading", text: "5. Online Trials → Paid Conversions", level: 3 },
       { type: "metric", label: "Conversion", value: "13%", change: "Drop from 17%", trend: "down" },
-      { type: "text", text: "📉 Trial-to-paid conversion decline by 24%." },
+      { type: "text", text: "📉 Trial-to-paid conversion decline by 24%." }
+    ]
+  },
+  {
+    id: "3",
+    sender: "OWOX",
+    timestamp: "9:00 AM",
+    content: [
       { type: "heading", text: "4 attention items detected this morning:", level: 2 },
       {
         type: "list",
@@ -46,7 +60,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "2",
+    id: "4",
     sender: "Anna",
     timestamp: "9:01 AM",
     content: [
@@ -54,7 +68,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "3",
+    id: "5",
     sender: "OWOX",
     timestamp: "9:02 AM",
     content: [
@@ -73,7 +87,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "4",
+    id: "6",
     sender: "Anna",
     timestamp: "9:03 AM",
     content: [
@@ -81,7 +95,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "5",
+    id: "7",
     sender: "OWOX",
     timestamp: "9:03 AM",
     content: [
@@ -99,7 +113,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "6",
+    id: "8",
     sender: "Anna",
     timestamp: "9:05 AM",
     content: [
@@ -107,7 +121,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "7",
+    id: "9",
     sender: "Ethan",
     timestamp: "9:05 AM",
     content: [
@@ -115,7 +129,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "8",
+    id: "10",
     sender: "Anna",
     timestamp: "9:06 AM",
     content: [
@@ -123,7 +137,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "9",
+    id: "11",
     sender: "OWOX",
     timestamp: "9:07 AM",
     content: [
@@ -142,7 +156,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "10",
+    id: "12",
     sender: "Anna",
     timestamp: "9:08 AM",
     content: [
@@ -150,7 +164,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "11",
+    id: "13",
     sender: "John",
     timestamp: "9:09 AM",
     content: [
@@ -158,7 +172,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "12",
+    id: "14",
     sender: "OWOX",
     timestamp: "9:09 AM",
     content: [
@@ -166,7 +180,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "13",
+    id: "15",
     sender: "John",
     timestamp: "9:18 AM",
     content: [
@@ -174,7 +188,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "14",
+    id: "16",
     sender: "OWOX",
     timestamp: "9:18 AM",
     content: [
@@ -186,7 +200,7 @@ export const chatMessages: Message[] = [
     ]
   },
   {
-    id: "15",
+    id: "17",
     sender: "Anna",
     timestamp: "9:20 AM",
     content: [
