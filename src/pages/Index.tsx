@@ -49,7 +49,7 @@ const Index = () => {
         <div
           ref={chatContainerRef}
           className="max-w-5xl mx-auto bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 shadow-xl overflow-hidden"
-          style={{ height: "calc(100vh - 140px)" }}
+          style={{ maxHeight: "70vh", height: "70vh" }}
         >
           <div className="h-full overflow-y-auto">
             {displayedMessages.map((message, index) => (
