@@ -47,10 +47,10 @@ const Index = () => {
       {/* Chat Container */}
       <main className="container mx-auto px-4 py-6">
         <div
-          className="max-w-5xl mx-auto bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 shadow-xl overflow-hidden"
+          className="max-w-4xl mx-auto bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 shadow-xl overflow-hidden"
           style={{ maxHeight: "70vh", height: "70vh" }}
         >
-          <div ref={chatContainerRef} className="h-full overflow-y-auto pr-3">
+          <div ref={chatContainerRef} className="h-full overflow-y-auto pr-3 flex flex-col justify-end">
             {displayedMessages.map((message, index) => (
               <ChatMessage
                 key={message.id}

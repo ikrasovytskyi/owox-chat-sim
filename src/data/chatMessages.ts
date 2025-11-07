@@ -84,7 +84,8 @@ export const chatMessages: Message[] = [
         ]
       },
       { type: "text", text: "Would you like me to pull rep-level details next?" }
-    ]
+    ],
+    reactions: ["👀", "😟"]
   },
   {
     id: "6",
@@ -110,7 +111,8 @@ export const chatMessages: Message[] = [
         ]
       },
       { type: "text", text: "⚠️ Possible pattern: over-discounting might not be speeding up closes – only lowering margins." }
-    ]
+    ],
+    reactions: ["😬", "💡"]
   },
   {
     id: "8",
@@ -126,7 +128,8 @@ export const chatMessages: Message[] = [
     timestamp: "9:05 AM",
     content: [
       { type: "text", text: "On it, @Anna. I'll review discount logic in the CRM. Looks like some custom rules were bypassed last week — I'll confirm." }
-    ]
+    ],
+    reactions: ["👍"]
   },
   {
     id: "10",
@@ -153,7 +156,8 @@ export const chatMessages: Message[] = [
         ]
       },
       { type: "text", text: "💡 Recommendation: Rebalance target coverage or adjust weighting on stage probability." }
-    ]
+    ],
+    reactions: ["🤔", "📈"]
   },
   {
     id: "12",
@@ -169,7 +173,8 @@ export const chatMessages: Message[] = [
     timestamp: "9:09 AM",
     content: [
       { type: "text", text: "Yep, I'll verify that, @Anna. I suspect LatAm Data Mart might still use the old probability curve. Give me 10 minutes — I'll refresh the model and let you know." }
-    ]
+    ],
+    reactions: ["💪"]
   },
   {
     id: "14",
@@ -185,7 +190,8 @@ export const chatMessages: Message[] = [
     timestamp: "9:18 AM",
     content: [
       { type: "text", text: "All done ✅ The model now reflects the updated scoring. Pipeline probabilities look good again." }
-    ]
+    ],
+    reactions: ["🎉", "⚡"]
   },
   {
     id: "16",
@@ -197,7 +203,8 @@ export const chatMessages: Message[] = [
       { type: "metric", label: "New accuracy", value: "96.3%", trend: "up" },
       { type: "text", text: "LatAm variance closed from –15% → –3.7%." },
       { type: "text", text: "All dashboards and reports refreshed in Sheets and Looker Studio 📊" }
-    ]
+    ],
+    reactions: ["🔥", "🙌"]
   },
   {
     id: "17",
@@ -206,6 +213,7 @@ export const chatMessages: Message[] = [
     content: [
       { type: "text", text: "Fantastic work, team! 🎉 This is exactly why we invested in @OWOX. The real-time insights and collaboration are game-changers." },
       { type: "text", text: "Let's keep this momentum going. I'll schedule a quick sync for tomorrow to review the EMEA action items." }
-    ]
+    ],
+    reactions: ["❤️", "🚀"]
   }
 ];

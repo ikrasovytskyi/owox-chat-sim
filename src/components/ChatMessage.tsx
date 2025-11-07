@@ -171,6 +171,20 @@ export const ChatMessage = ({ message, isAnimating }: ChatMessageProps) => {
             <MessageContent key={i} content={content} />
           ))}
         </div>
+
+        {/* Reactions */}
+        {message.reactions && message.reactions.length > 0 && (
+          <div className="flex gap-1 mt-1">
+            {message.reactions.map((reaction, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center justify-center text-xs bg-muted/50 hover:bg-muted/70 transition-colors rounded-full px-1.5 py-0.5 cursor-pointer"
+              >
+                {reaction}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

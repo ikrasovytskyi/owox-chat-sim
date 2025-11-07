@@ -5,6 +5,7 @@ export interface Message {
   sender: MessageSender;
   content: MessageContent[];
   timestamp: string;
+  reactions?: string[];
 }
 
 export type MessageContent = 
