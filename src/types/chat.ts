@@ -5,8 +5,18 @@ export interface Message {
   sender: MessageSender;
   content: MessageContent[];
   timestamp: string;
-  reactions?: string[];
 }
+
+export interface Reaction {
+  id: string;
+  messageId: string;
+  sender: MessageSender;
+  emoji: string;
+}
+
+export type ChatEvent = 
+  | { type: "message"; data: Message }
+  | { type: "reaction"; data: Reaction };
 
 export type MessageContent = 
   | { type: "text"; text: string }

@@ -2,6 +2,7 @@ import { Message, SENDER_INFO } from "@/types/chat";
 import { cn } from "@/lib/utils";
 import { MessageContent as MessageContentType } from "@/types/chat";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { useState, useEffect } from "react";
 import owoxLogo from "@/assets/owox-logo.png";
 import annaAvatar from "@/assets/anna-avatar.jpg";
 import ethanAvatar from "@/assets/ethan-avatar.jpg";
@@ -17,6 +18,7 @@ const avatarMap: Record<string, string> = {
 interface ChatMessageProps {
   message: Message;
   isAnimating?: boolean;
+  showTyping?: boolean;
 }
 
 const MessageContent = ({ content }: { content: MessageContentType }) => {
@@ -125,8 +127,36 @@ const MessageContent = ({ content }: { content: MessageContentType }) => {
   }
 };
 
-export const ChatMessage = ({ message, isAnimating }: ChatMessageProps) => {
+export const ChatMessage = ({ message, isAnimating, showTyping }: ChatMessageProps) => {
   const senderInfo = SENDER_INFO[message.sender];
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTypingComplete, setIsTypingComplete] = useState(!showTyping);
+  
+  // Get the first text content for typing animation
+  const firstTextContent = message.content.find(c => c.type === "text" && "text" in c);
+  const textToType = firstTextContent && "text" in firstTextContent ? firstTextContent.text : "";
+
+  useEffect(() => {
+    if (!showTyping || !textToType) {
+      setIsTypingComplete(true);
+      return;
+    }
+
+    let currentIndex = 0;
+    setDisplayedText("");
+    
+    const typingInterval = setInterval(() => {
+      if (currentIndex < textToType.length) {
+        setDisplayedText(textToType.slice(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+        setIsTypingComplete(true);
+      }
+    }, 30); // 30ms per character
+
+    return () => clearInterval(typingInterval);
+  }, [showTyping, textToType]);
 
   return (
     <div
@@ -167,24 +197,17 @@ export const ChatMessage = ({ message, isAnimating }: ChatMessageProps) => {
 
         {/* Content */}
         <div className="text-sm text-foreground/90 space-y-1">
-          {message.content.map((content, i) => (
-            <MessageContent key={i} content={content} />
-          ))}
+          {showTyping && !isTypingComplete ? (
+            <p className="text-sm leading-snug whitespace-pre-wrap">
+              {displayedText}
+              <span className="animate-pulse">|</span>
+            </p>
+          ) : (
+            message.content.map((content, i) => (
+              <MessageContent key={i} content={content} />
+            ))
+          )}
         </div>
-
-        {/* Reactions */}
-        {message.reactions && message.reactions.length > 0 && (
-          <div className="flex gap-1 mt-1">
-            {message.reactions.map((reaction, i) => (
-              <span
-                key={i}
-                className="inline-flex items-center justify-center text-xs bg-muted/50 hover:bg-muted/70 transition-colors rounded-full px-1.5 py-0.5 cursor-pointer"
-              >
-                {reaction}
-              </span>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );

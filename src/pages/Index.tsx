@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { ChatMessage } from "@/components/ChatMessage";
-import { chatMessages } from "@/data/chatMessages";
+import { ReactionEvent } from "@/components/ReactionEvent";
+import { chatEvents } from "@/data/chatEvents";
 import { Sparkles } from "lucide-react";
 
 const Index = () => {
-  const [displayedMessages, setDisplayedMessages] = useState<typeof chatMessages>([]);
+  const [displayedEvents, setDisplayedEvents] = useState<typeof chatEvents>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (currentIndex < chatMessages.length) {
+    if (currentIndex < chatEvents.length) {
       const timer = setTimeout(() => {
-        setDisplayedMessages((prev) => [...prev, chatMessages[currentIndex]]);
+        setDisplayedEvents((prev) => [...prev, chatEvents[currentIndex]]);
         setCurrentIndex((prev) => prev + 1);
       }, 5000);
 
@@ -23,7 +24,7 @@ const Index = () => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
-  }, [displayedMessages]);
+  }, [displayedEvents]);
 
   return (
     <div className="min-h-screen gradient-bg">
@@ -51,15 +52,31 @@ const Index = () => {
           style={{ maxHeight: "70vh", height: "70vh" }}
         >
           <div ref={chatContainerRef} className="h-full overflow-y-auto pr-3 flex flex-col justify-end">
-            {displayedMessages.map((message, index) => (
-              <ChatMessage
-                key={message.id}
-                message={message}
-                isAnimating={index === displayedMessages.length - 1}
-              />
-            ))}
+            {displayedEvents.map((event, index) => {
+              const isAnimating = index === displayedEvents.length - 1;
+              
+              if (event.type === "message") {
+                const showTyping = event.data.sender === "Anna" && isAnimating;
+                return (
+                  <ChatMessage
+                    key={event.data.id}
+                    message={event.data}
+                    isAnimating={isAnimating}
+                    showTyping={showTyping}
+                  />
+                );
+              } else {
+                return (
+                  <ReactionEvent
+                    key={event.data.id}
+                    reaction={event.data}
+                    isAnimating={isAnimating}
+                  />
+                );
+              }
+            })}
             
-            {currentIndex >= chatMessages.length && (
+            {currentIndex >= chatEvents.length && (
               <div className="p-4 text-center">
                 <div className="inline-flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 rounded-full px-4 py-2">
                   <Sparkles className="w-4 h-4" />
