@@ -139,11 +139,13 @@ export const ChatMessage = ({ message, isAnimating, showTyping }: ChatMessagePro
   useEffect(() => {
     if (!showTyping || !textToType) {
       setIsTypingComplete(true);
+      setDisplayedText("");
       return;
     }
 
     let currentIndex = 0;
     setDisplayedText("");
+    setIsTypingComplete(false);
     
     const typingInterval = setInterval(() => {
       if (currentIndex < textToType.length) {
@@ -151,12 +153,12 @@ export const ChatMessage = ({ message, isAnimating, showTyping }: ChatMessagePro
         currentIndex++;
       } else {
         clearInterval(typingInterval);
-        setIsTypingComplete(true);
+        setTimeout(() => setIsTypingComplete(true), 300);
       }
-    }, 30); // 30ms per character
+    }, 20);
 
     return () => clearInterval(typingInterval);
-  }, [showTyping, textToType]);
+  }, [showTyping, textToType, message.id]);
 
   return (
     <div

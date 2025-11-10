@@ -11,10 +11,13 @@ const Index = () => {
 
   useEffect(() => {
     if (currentIndex < chatEvents.length) {
+      const currentEvent = chatEvents[currentIndex];
+      const delay = currentEvent.type === "reaction" ? 1500 : 5000;
+      
       const timer = setTimeout(() => {
         setDisplayedEvents((prev) => [...prev, chatEvents[currentIndex]]);
         setCurrentIndex((prev) => prev + 1);
-      }, 5000);
+      }, delay);
 
       return () => clearTimeout(timer);
     }
@@ -56,13 +59,13 @@ const Index = () => {
               const isAnimating = index === displayedEvents.length - 1;
               
               if (event.type === "message") {
-                const showTyping = event.data.sender === "Anna" && isAnimating;
+                const isAnna = event.data.sender === "Anna";
                 return (
                   <ChatMessage
                     key={event.data.id}
                     message={event.data}
                     isAnimating={isAnimating}
-                    showTyping={showTyping}
+                    showTyping={isAnna}
                   />
                 );
               } else {
