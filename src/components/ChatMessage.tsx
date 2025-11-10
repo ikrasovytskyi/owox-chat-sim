@@ -7,12 +7,28 @@ import owoxLogo from "@/assets/owox-logo.png";
 import annaAvatar from "@/assets/anna-avatar.jpg";
 import ethanAvatar from "@/assets/ethan-avatar.jpg";
 import johnAvatar from "@/assets/john-avatar.jpg";
+import jamesAvatar from "@/assets/james-avatar.jpg";
+import aaronAvatar from "@/assets/aaron-avatar.jpg";
+import juliaAvatar from "@/assets/julia-avatar.jpg";
+import michaelAvatar from "@/assets/michael-avatar.jpg";
+import davidAvatar from "@/assets/david-avatar.jpg";
+import sarahAvatar from "@/assets/sarah-avatar.jpg";
+import rachelAvatar from "@/assets/rachel-avatar.jpg";
+import tomAvatar from "@/assets/tom-avatar.jpg";
 
 const avatarMap: Record<string, string> = {
   "owox-logo": owoxLogo,
   "anna-avatar": annaAvatar,
   "ethan-avatar": ethanAvatar,
   "john-avatar": johnAvatar,
+  "james-avatar": jamesAvatar,
+  "aaron-avatar": aaronAvatar,
+  "julia-avatar": juliaAvatar,
+  "michael-avatar": michaelAvatar,
+  "david-avatar": davidAvatar,
+  "sarah-avatar": sarahAvatar,
+  "rachel-avatar": rachelAvatar,
+  "tom-avatar": tomAvatar,
 };
 
 interface ChatMessageProps {

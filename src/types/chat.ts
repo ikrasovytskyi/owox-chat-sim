@@ -1,4 +1,4 @@
-export type MessageSender = "OWOX" | "Anna" | "Ethan" | "John";
+export type MessageSender = "OWOX" | "Anna" | "Ethan" | "John" | "James" | "Aaron" | "Julia" | "Michael" | "David" | "Sarah" | "Rachel" | "Tom";
 
 export interface Message {
   id: string;
@@ -30,4 +30,12 @@ export const SENDER_INFO: Record<MessageSender, { name: string; role: string; co
   Anna: { name: "Anna", role: "Head of Sales", color: "chat-anna", avatar: "anna-avatar" },
   Ethan: { name: "Ethan", role: "Sales Operations Manager", color: "chat-ethan", avatar: "ethan-avatar" },
   John: { name: "John", role: "Data Analyst", color: "chat-john", avatar: "john-avatar" },
+  James: { name: "James", role: "Head of Marketing", color: "chat-james", avatar: "james-avatar" },
+  Aaron: { name: "Aaron", role: "Marketing Manager", color: "chat-aaron", avatar: "aaron-avatar" },
+  Julia: { name: "Julia", role: "Head of Finance", color: "chat-julia", avatar: "julia-avatar" },
+  Michael: { name: "Michael", role: "Financial Analyst", color: "chat-michael", avatar: "michael-avatar" },
+  David: { name: "David", role: "Head of Product", color: "chat-david", avatar: "david-avatar" },
+  Sarah: { name: "Sarah", role: "Product Manager", color: "chat-sarah", avatar: "sarah-avatar" },
+  Rachel: { name: "Rachel", role: "Head of Operations", color: "chat-rachel", avatar: "rachel-avatar" },
+  Tom: { name: "Tom", role: "Operations Coordinator", color: "chat-tom", avatar: "tom-avatar" },
 };

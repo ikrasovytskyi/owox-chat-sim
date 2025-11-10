@@ -49,6 +49,14 @@ All colors MUST be HSL.
     --chat-anna: 335 78% 50%;
     --chat-ethan: 24 90% 53%;
     --chat-john: 160 84% 39%;
+    --chat-james: 271 60% 55%;
+    --chat-aaron: 280 70% 50%;
+    --chat-julia: 310 65% 48%;
+    --chat-michael: 195 85% 45%;
+    --chat-david: 145 75% 42%;
+    --chat-sarah: 45 85% 52%;
+    --chat-rachel: 330 70% 50%;
+    --chat-tom: 210 75% 48%;
 
     --gradient-primary: linear-gradient(135deg, hsl(238 76% 62%), hsl(250 60% 52%));
     --gradient-accent: linear-gradient(135deg, hsl(188 95% 43%), hsl(200 95% 50%));
@@ -104,6 +112,14 @@ All colors MUST be HSL.
     --chat-anna: 335 78% 50%;
     --chat-ethan: 24 90% 53%;
     --chat-john: 160 84% 39%;
+    --chat-james: 271 60% 55%;
+    --chat-aaron: 280 70% 50%;
+    --chat-julia: 310 65% 48%;
+    --chat-michael: 195 85% 45%;
+    --chat-david: 145 75% 42%;
+    --chat-sarah: 45 85% 52%;
+    --chat-rachel: 330 70% 50%;
+    --chat-tom: 210 75% 48%;
 
     --gradient-primary: linear-gradient(135deg, hsl(238 76% 62%), hsl(250 60% 52%));
     --gradient-accent: linear-gradient(135deg, hsl(188 95% 43%), hsl(200 95% 50%));
