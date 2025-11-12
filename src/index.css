@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 220 14% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 188 95% 43%;
+    --accent: 208, 79%, 51%;
     --accent-foreground: 0 0% 100%;
 
     --success: 160 84% 39%;
@@ -91,7 +91,7 @@ All colors MUST be HSL.
     --muted: 224 16% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 188 95% 43%;
+    --accent: 208 79% 51%;
     --accent-foreground: 0 0% 100%;
 
     --success: 160 84% 39%;
@@ -121,8 +121,8 @@ All colors MUST be HSL.
     --chat-rachel: 330 70% 50%;
     --chat-tom: 210 75% 48%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(238 76% 62%), hsl(250 60% 52%));
-    --gradient-accent: linear-gradient(135deg, hsl(188 95% 43%), hsl(200 95% 50%));
+    --gradient-primary: linear-gradient(135deg, rgb(84, 89, 232), hsl(250 60% 52%));
+    --gradient-accent: linear-gradient(135deg, rgb(30, 136, 229), rgb(30, 136, 229));
     --gradient-bg: linear-gradient(180deg, hsl(224 20% 8%), hsl(224 18% 10%));
 
     --sidebar-background: 240 6% 10%;

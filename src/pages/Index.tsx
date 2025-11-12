@@ -59,24 +59,27 @@ const Index = () => {
               const isAnimating = index === displayedEvents.length - 1;
               
               if (event.type === "message") {
-                const isAnna = event.data.sender === "Anna";
-                return (
-                  <ChatMessage
-                    key={event.data.id}
-                    message={event.data}
-                    isAnimating={isAnimating}
-                    showTyping={isAnna}
-                  />
-                );
-              } else {
-                return (
-                  <ReactionEvent
-                    key={event.data.id}
-                    reaction={event.data}
-                    isAnimating={isAnimating}
-                  />
-                );
-              }
+  const typingUsers = ["Anna", "James", "Julia", "David", "Rachel"];
+  const showTyping = typingUsers.includes(event.data.sender);
+
+  return (
+    <ChatMessage
+      key={event.data.id}
+      message={event.data}
+      isAnimating={isAnimating}
+      showTyping={showTyping}
+    />
+  );
+} else {
+  return (
+    <ReactionEvent
+      key={event.data.id}
+      reaction={event.data}
+      isAnimating={isAnimating}
+    />
+  );
+}
+
             })}
             
             {currentIndex >= chatEvents.length && (
