@@ -133,6 +133,8 @@ const MessageContent = ({ content }: { content: MessageContentType }) => {
                   ? "bg-success/20 text-success"
                   : content.trend === "down"
                   ? "bg-destructive/20 text-destructive"
+                  : content.trend === "steady"
+                  ? "bg-muted text-muted-foreground"
                   : "bg-muted text-muted-foreground"
               )}
             >
