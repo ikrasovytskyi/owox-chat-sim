@@ -70,6 +70,9 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 6% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 238 76% 62%;
+
+    --link: 142 76% 36%;
+    --link-hover: 142 76% 30%;
   }
 
   .dark {
@@ -133,6 +136,9 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 5% 96%;
     --sidebar-border: 240 4% 16%;
     --sidebar-ring: 238 76% 62%;
+
+    --link: 142 76% 45%;
+    --link-hover: 142 76% 38%;
   }
 }
 

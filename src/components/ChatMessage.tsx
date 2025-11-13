@@ -42,9 +42,13 @@ const MessageContent = ({ content }: { content: MessageContentType }) => {
     case "text":
       return (
         <p className="text-sm leading-snug whitespace-pre-wrap">
-          {content.text.split(/(@\w+)/).map((part, i) =>
+          {content.text.split(/(@\w+|Data Sheet)/).map((part, i) =>
             part.startsWith("@") ? (
               <span key={i} className="font-semibold text-accent">
+                {part}
+              </span>
+            ) : part === "Data Sheet" ? (
+              <span key={i} className="font-semibold text-link underline hover:text-link-hover cursor-pointer transition-colors">
                 {part}
               </span>
             ) : (
