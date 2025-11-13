@@ -22,7 +22,7 @@ export type MessageContent =
   | { type: "text"; text: string }
   | { type: "list"; items: string[] }
   | { type: "table"; headers: string[]; rows: string[][] }
-  | { type: "metric"; label: string; value: string; change?: string; trend?: "up" | "down" }
+  | { type: "metric"; label: string; value: string; change?: string; trend?: "up" | "down" | "steady" }
   | { type: "heading"; text: string; level: 1 | 2 | 3 };
 
 export const SENDER_INFO: Record<MessageSender, { name: string; role: string; color: string; avatar?: string }> = {

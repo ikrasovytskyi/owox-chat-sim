@@ -41,10 +41,14 @@ const MessageContent = ({ content }: { content: MessageContentType }) => {
   switch (content.type) {
     case "text":
       return (
-        <p className="text-sm leading-snug whitespace-pre-wrap">
-          {content.text.split(/(@\w+)/).map((part, i) =>
+         <p className="text-sm leading-snug whitespace-pre-wrap">
+          {content.text.split(/(@\w+|Data Sheet)/).map((part, i) =>
             part.startsWith("@") ? (
               <span key={i} className="font-semibold text-accent">
+                {part}
+              </span>
+            ) : part === "Data Sheet" ? (
+              <span key={i} className="font-semibold text-link underline hover:text-link-hover cursor-pointer transition-colors">
                 {part}
               </span>
             ) : (
@@ -129,6 +133,8 @@ const MessageContent = ({ content }: { content: MessageContentType }) => {
                   ? "bg-success/20 text-success"
                   : content.trend === "down"
                   ? "bg-destructive/20 text-destructive"
+                  : content.trend === "steady"
+                  ? "bg-muted text-muted-foreground"
                   : "bg-muted text-muted-foreground"
               )}
             >
