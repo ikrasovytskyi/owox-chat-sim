@@ -9,8 +9,8 @@ export const chatEvents: ChatEvent[] =
       sender: "OWOX",
       timestamp: "9:01 AM",
       content: [
-        { type: "text", text: "I checked all campaigns with ≥ 20 clicks and flagged those where 2 out of 3 conditions declined (Purchases ↓, CR ↓, CPO ↑)." },
-        { type: "text", text: "Here’s the purchase efficiency review from yesterday based on your detection rules 👇" }
+        { type: "text", text: "Here’s your daily campaign performance scan 👇" },
+        { type: "text", text: "I reviewed all campaigns with ≥ 10 clicks and compared yesterday vs 7-day baseline." }
       ]
     }
   },
@@ -21,24 +21,25 @@ export const chatEvents: ChatEvent[] =
       sender: "OWOX",
       timestamp: "9:02 AM",
       content: [
-        { type: "heading", text: "⚠️ 3 Campaigns With Notable Efficiency Decline", level: 2 },
-        { type: "heading", text: "1️⃣ Meta – Broad Interests (TOF)", level: 3 },
-        { type: "metric", label: "Purchases", value: "42 vs 68 avg", change: "↓38%", trend: "down" },
-        { type: "metric", label: "CR", value: "0.9% vs 1.6% avg", change: "↓44%", trend: "down" },
-        { type: "metric", label: "ROAS", value: "1.7x vs 2.4x avg", change: "↓29%", trend: "down" },
-        { type: "metric", label: "CPO", value: "$38 vs $24 avg", change: "↑58%", trend: "up" },
+        { type: "heading", text: "⚠️ 3 Campaigns Showed Meaningful Efficiency Decline", level: 2 },
+        { type: "text", text: "(≥ 2 of 3 metrics triggered)" },
+        { type: "heading", text: "1️⃣ Meta – Lookalike 3%", level: 3 },
+        { type: "metric", label: "Orders", value: "21 vs 32 avg", change: "↓34%", trend: "down" },
+        { type: "metric", label: "CR", value: "1.1% vs 1.8% avg", change: "↓39%", trend: "down" },
+        { type: "metric", label: "ROAS", value: "1.6 vs 2.3 avg", change: "↓30%", trend: "down" },
+        { type: "metric", label: "CPO", value: "$41 vs $28 avg", change: "↑46%", trend: "up" },
 
-        { type: "heading", text: "2️⃣ Google Search – Product Terms (BOF)", level: 3 },
-        { type: "metric", label: "Purchases", value: "33 vs 45 avg", change: "↓27%", trend: "down" },
-        { type: "metric", label: "CR", value: "2.2% vs 3.0% avg", change: "↓27%", trend: "down" },
-        { type: "metric", label: "ROAS", value: "2.9x vs 4.1x avg", change: "↓30%", trend: "down" },
-        { type: "metric", label: "CPO", value: "$51 vs $39 avg", change: "↑31%", trend: "up" },
+        { type: "heading", text: "2️⃣ Google Search – Mid-Intent", level: 3 },
+        { type: "metric", label: "Orders", value: "18 vs 25 avg", change: "↓28%", trend: "down" },
+        { type: "metric", label: "CR", value: "2.2% vs 3.1% avg", change: "↓29%", trend: "down" },
+        { type: "metric", label: "ROAS", value: "2.4 vs 3.5 avg", change: "↓31%", trend: "down" },
+        { type: "metric", label: "CPO", value: "$54 vs $40 avg", change: "↑35%", trend: "up" },
 
-        { type: "heading", text: "3️⃣ Performance Max – Retargeting", level: 3 },
-        { type: "metric", label: "Purchases", value: "58 vs 72 avg", change: "↓19%", trend: "down" },
-        { type: "metric", label: "CR", value: "3.6% vs 4.9% avg", change: "↓26%", trend: "down" },
-        { type: "metric", label: "ROAS", value: "4.3x vs 5.2x avg", change: "↓17%", trend: "down" },
-        { type: "metric", label: "CPO", value: "$28 vs $20 avg", change: "↑40%", trend: "up" }
+        { type: "heading", text: "3️⃣ TikTok – Interest Stack #2", level: 3 },
+        { type: "metric", label: "Orders", value: "9 vs 15 avg", change: "↓40%", trend: "down" },
+        { type: "metric", label: "CR", value: "0.6% vs 1.1% avg", change: "↓45%", trend: "down" },
+        { type: "metric", label: "ROAS", value: "1.3 vs 2.0 avg", change: "↓35%", trend: "down" },
+        { type: "metric", label: "CPO", value: "$63 vs $39 avg", change: "↑62%", trend: "up" }
       ]
     }
   },
@@ -57,16 +58,16 @@ export const chatEvents: ChatEvent[] =
       sender: "OWOX",
       timestamp: "9:03 AM",
       content: [
-        { type: "heading", text: "✅ Recommended Budget Shifts Today", level: 2 },
+        { type: "heading", text: "✅ Recommended Actions for Today", level: 2 },
         {
           type: "list",
           items: [
-            "Meta – Broad (TOF): Do not pause. Rotate creatives → protects retargeting pool while stabilizing ROAS.",
-            "Search – Products (BOF): Reduce spend ~20–30% and shift into High-Intent Search, where ROAS remains strong.",
-            "Performance Max – Retargeting: Keep spend steady – ROAS drop is linked to shrinking TOF volume, not channel inefficiency."
+            "Meta – Lookalike 3% → Scale back 20–25% and shift budget to Meta Retargeting (still stable).",
+            "Search – Mid-Intent → Reduce bids ~10–15%, re-allocate to High-Intent Search Terms.",
+            "TikTok – Interest Stack #2 → Pause creatives with low CTR and refresh variants."
           ]
         },
-        { type: "text", text: "Open Data Sheet: Campaign Efficiency Overview 📄" }
+        { type: "text", text: "Open Data Sheet: Campaign Performance Overview 📄" }
       ]
     }
   },
@@ -83,9 +84,9 @@ export const chatEvents: ChatEvent[] =
     data: {
       id: "4",
       sender: "James",
-      timestamp: "9:04 AM",
+      timestamp: "9:08 AM",
       content: [
-        { type: "text", text: "@Aaron let's start with Search – Products. Go ahead and pull back ~25% spend and reallocate to Brand + High-Intent." }
+        { type: "text", text: "@Aaron let’s start by pulling back Mid-Intent Search and shifting ~20% to High-Intent. I’m okay tightening bids today." }
       ]
     }
   },
@@ -94,9 +95,9 @@ export const chatEvents: ChatEvent[] =
     data: {
       id: "5",
       sender: "Aaron",
-      timestamp: "9:04 AM",
+      timestamp: "9:12 AM",
       content: [
-        { type: "text", text: "On it. Before I shift budget, @OWOX can you confirm High-Intent Search is still efficient?" }
+        { type: "text", text: "Got it. Before reallocating spend → @OWOX can you confirm High-Intent Search is still holding efficiency?" }
       ]
     }
   },
@@ -105,13 +106,14 @@ export const chatEvents: ChatEvent[] =
     data: {
       id: "6",
       sender: "OWOX",
-      timestamp: "9:05 AM",
+      timestamp: "9:12 AM",
       content: [
-        { type: "text", text: "Yes – Search – High Intent continues to perform well:" },
-        { type: "metric", label: "Purchases", value: "+9% vs 7-day avg", trend: "up" },
-        { type: "metric", label: "CR", value: "4.8%", trend: "steady" },
-        { type: "metric", label: "CPO", value: "$22–$24", trend: "steady" },
-        { type: "text", text: "Open Data Sheet: High-Intent Search Breakdown 📄" }
+        { type: "text", text: "Yes – High-Intent Search remains strong:" },
+        { type: "metric", label: "Orders", value: "+12% vs 7-day avg", trend: "up" },
+        { type: "metric", label: "CR", value: "4.9%", trend: "steady" },
+        { type: "metric", label: "CPO", value: "$24–$26", trend: "steady" },
+        { type: "metric", label: "ROAS", value: "3.8x", trend: "steady" },
+        { type: "text", text: "Open Data Sheet: High Intent Search Breakdown 🔎" }
       ]
     }
   },
@@ -122,16 +124,15 @@ export const chatEvents: ChatEvent[] =
   {
     type: "reaction",
     data: { id: "r6", messageId: "6", sender: "Aaron", emoji: "✅" }
-  }
-  ,
+  },
   {
     type: "message",
     data: {
       id: "7",
       sender: "Aaron",
-      timestamp: "9:06 AM",
+      timestamp: "9:18 AM",
       content: [
-        { type: "text", text: "Great. @OWOX break down High-Intent by ad group – which ones should receive the increased spend?" }
+        { type: "text", text: "Great. @OWOX break down High-Intent by ad group — which ones should we actually send the additional spend to?" }
       ]
     }
   },
@@ -140,49 +141,51 @@ export const chatEvents: ChatEvent[] =
     data: {
       id: "8",
       sender: "OWOX",
-      timestamp: "9:07 AM",
+      timestamp: "9:18 AM",
       content: [
-        { type: "heading", text: "Strongest ad groups by lowest Cost per Order", level: 3 },
-        {
-          type: "list",
-          items: [
-            "Brand Core – CPO $18, CR 5.4%",
-            "High Intent | Product Fit – CPO $21, CR 5.1%",
-            "Competitor Defender – CPO $32, CR 3.9%"
-          ]
-        },
-        { type: "text", text: "→ Recommend shifting spend toward Brand Core + Product Fit and reducing Competitor Defender for efficiency." },
-        { type: "text", text: "Updated sheet: High Intent Ad Group View 📄" }
+        { type: "text", text: "Analyzing ad group-level efficiency… (working…)" }
       ]
     }
-  },
-  {
-    type: "reaction",
-    data: { id: "r7", messageId: "8", sender: "James", emoji: "🎯" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r8", messageId: "8", sender: "Aaron", emoji: "📈" }
-  },
+  }
+,
   {
     type: "message",
     data: {
       id: "9",
-      sender: "James",
-      timestamp: "9:10 AM",
+      sender: "OWOX",
+      timestamp: "9:20 AM",
       content: [
-        { type: "text", text: "Good. Now on Meta – Broad (TOF) – @OWOX, show performance by creative groups in the US. I want to see if this is audience fatigue or specific creative decay." }
+        { type: "heading", text: "High-Intent Search – Ad Group Performance", level: 2 },
+        {
+          type: "list",
+          items: [
+            "Brand Core – CPO $18, CR 5.5%",
+            "High Intent | Product Fit – CPO $22, CR 5.0%",
+            "Competitor Defender – CPO $31, CR 3.7%"
+          ]
+        },
+        { type: "text", text: "Recommendation → Shift spend toward Brand Core + Product Fit, cut Competitor Defender by ~30%." },
+        { type: "text", text: "Open Data Sheet: Ad Group View 📄" }
       ]
     }
+  },
+  {
+    type: "reaction",
+    data: { id: "r7", messageId: "9", sender: "James", emoji: "🎯" }
+  },
+  {
+    type: "reaction",
+    data: { id: "r8", messageId: "9", sender: "Aaron", emoji: "📈" }
   },
   {
     type: "message",
     data: {
       id: "10",
-      sender: "OWOX",
-      timestamp: "9:11 AM",
+      sender: "James",
+      timestamp: "9:22 AM",
       content: [
-        { type: "text", text: "Checking creative group performance…" }
+        { type: "text", text: "Perfect. Let’s roll that reallocation today." },
+        { type: "text", text: "Also, @OWOX show me TikTok – Interest Stack #2. I want to confirm the drop isn’t caused by creative fatigue." }
       ]
     }
   },
@@ -191,50 +194,49 @@ export const chatEvents: ChatEvent[] =
     data: {
       id: "11",
       sender: "OWOX",
-      timestamp: "9:12 AM",
+      timestamp: "9:23 AM",
       content: [
-        { type: "heading", text: "Creative-Level Efficiency (Meta – Broad)", level: 3 },
-        {
-          type: "list",
-          items: [
-            "Creative A (UGC / Demo) – CR 1.3%, CPM stable → still viable",
-            "Creative B (Static Product) – CR 0.6%, CTR down –31% → likely fatigue",
-            "Creative C (Lifestyle Video) – CTR stable but CPC ↑ +25%"
-          ]
-        },
-        { type: "text", text: "→ Efficiency loss mostly from Creative Group B underperformance." },
-        { type: "text", text: "Open Data Sheet: Meta Ads Creative Analysis 🎨" }
+        { type: "text", text: "Checking TikTok creative-level performance…" }
       ]
     }
-  },
-  {
-    type: "reaction",
-    data: { id: "r9", messageId: "11", sender: "James", emoji: "👀" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r10", messageId: "11", sender: "Aaron", emoji: "💡" }
   },
   {
     type: "message",
     data: {
       id: "12",
-      sender: "Aaron",
-      timestamp: "9:15 AM",
+      sender: "OWOX",
+      timestamp: "9:25 AM",
       content: [
-        { type: "text", text: "Got it – I’ll rotate Creative B out and refresh that variant today." }
+        { type: "heading", text: "Creative Performance – TikTok Interest Stack #2", level: 2 },
+        {
+          type: "list",
+          items: [
+            "Creative A (UGC Product Demo) – CR 0.9%, CTR stable",
+            "Creative B (Static Image) – CR 0.4%, CTR ↓ 27%",
+            "Creative C (Lifestyle) – CR 0.6%, CTR ↓ 15%"
+          ]
+        },
+        { type: "text", text: "Most decline driven by Creative B fatigue → rotate out or refresh variant." },
+        { type: "text", text: "Open Data Sheet: TikTok Creative Breakdown 📄" }
       ]
     }
-  }         
-,
+  },
+  {
+    type: "reaction",
+    data: { id: "r9", messageId: "12", sender: "James", emoji: "👀" }
+  },
+  {
+    type: "reaction",
+    data: { id: "r10", messageId: "12", sender: "Aaron", emoji: "💡" }
+  },
   {
     type: "message",
     data: {
       id: "13",
-      sender: "James",
-      timestamp: "9:16 AM",
+      sender: "Aaron",
+      timestamp: "9:27 AM",
       content: [
-        { type: "text", text: "Now – about Performance Max Retargeting: Before we assume the drop is TOF-driven, @OWOX can you show retargeting audience-size trend over the last 15 days?" }
+        { type: "text", text: "Got it. I’ll pause Creative B and prep two new UGC versions with updated hooks." }
       ]
     }
   },
@@ -242,10 +244,11 @@ export const chatEvents: ChatEvent[] =
     type: "message",
     data: {
       id: "14",
-      sender: "OWOX",
-      timestamp: "9:16 AM",
+      sender: "James",
+      timestamp: "9:29 AM",
       content: [
-        { type: "text", text: "Pulling audience-pool trend…" }
+        { type: "text", text: "Awesome. Once live, we’ll check ROAS tomorrow." },
+        { type: "text", text: "@John please make sure tomorrow’s report compares old vs new creatives so we can measure lift." }
       ]
     }
   },
@@ -253,191 +256,51 @@ export const chatEvents: ChatEvent[] =
     type: "message",
     data: {
       id: "15",
-      sender: "OWOX",
-      timestamp: "9:18 AM",
+      sender: "John",
+      timestamp: "9:30 AM",
       content: [
-        { type: "heading", text: "Audience-size trend — last 15 days (every 3)", level: 3 },
-        { type: "text", text: "14.2 k → 13.9 k → 13.1 k → 12.5 k → 11.8 k" },
-        { type: "text", text: "→ Retargeting pool is shrinking steadily." },
-        { type: "text", text: "This aligns with the Meta Broad (TOF) decline — up-stream softness is reducing down-stream conversion efficiency." }
+        { type: "text", text: "On it. I’ll update the Data Mart filters to tag new creatives and capture ROAS delta automatically." },
+        { type: "text", text: "Tomorrow’s dashboard will include side-by-side comparison for quick review." }
       ]
     }
   },
   {
     type: "reaction",
-    data: { id: "r11", messageId: "15", sender: "James", emoji: "📉" }
+    data: { id: "r11", messageId: "15", sender: "James", emoji: "🎉" }
   },
   {
     type: "reaction",
-    data: { id: "r12", messageId: "15", sender: "Aaron", emoji: "🤔" }
+    data: { id: "r12", messageId: "15", sender: "Aaron", emoji: "🚀" }
   },
   {
     type: "message",
     data: {
       id: "16",
-      sender: "James",
-      timestamp: "9:25 AM",
+      sender: "OWOX",
+      timestamp: "9:32 AM",
       content: [
-        { type: "text", text: "Makes sense. We keep PMax stable — we fix TOF first." }
+        { type: "text", text: "Thanks team! I’ll keep monitoring the efficiency metrics post-creative update." },
+        { type: "text", text: "If ROAS stabilizes or rises by ≥10%, I’ll flag it in tomorrow’s summary automatically." }
       ]
     }
+  },
+  {
+    type: "reaction",
+    data: { id: "r13", messageId: "16", sender: "James", emoji: "🙌" }
+  },
+  {
+    type: "reaction",
+    data: { id: "r14", messageId: "16", sender: "Aaron", emoji: "🔥" }
   },
   {
     type: "message",
     data: {
       id: "17",
-      sender: "Aaron",
-      timestamp: "9:26 AM",
-      content: [
-        { type: "text", text: "@OWOX – can you give me a report showing a funnel Meta Broad (TOF) → Retargeting → Purchase so we can understand the drop rate?" }
-      ]
-    }
-  },
-  {
-    type: "message",
-    data: {
-      id: "18",
-      sender: "OWOX",
-      timestamp: "9:27 AM",
-      content: [
-        { type: "text", text: "I can, but I don’t currently have the join between ad-platform audiences and remarketing pools at the product SKU level." },
-        { type: "text", text: "To produce this funnel flow accurately, I’ll need the Audience-ID → Product-View Event mapping added." }
-      ]
-    }
-  },
-  {
-    type: "reaction",
-    data: { id: "r13", messageId: "18", sender: "James", emoji: "🧩" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r14", messageId: "18", sender: "Aaron", emoji: "📎" }
-  }
-,
-  {
-    type: "message",
-    data: {
-      id: "19",
       sender: "James",
-      timestamp: "9:27 AM",
+      timestamp: "9:35 AM",
       content: [
-        { type: "text", text: "@John – we’ll need your help here. Can you extend the Data Mart to include the Audience ID → Product View join so we can trace TOF → Product View → Purchase properly?" }
+        { type: "text", text: "Perfect work everyone. Let’s review the updated results in tomorrow’s report." }
       ]
     }
-  },
-  {
-    type: "message",
-    data: {
-      id: "20",
-      sender: "John",
-      timestamp: "10:25 AM",
-      content: [
-        { type: "text", text: "Yep, working on it. I’ll patch the join in the Data Mart and re-publish. Give me ~30 min." }
-      ]
-    }
-  },
-  {
-    type: "message",
-    data: {
-      id: "21",
-      sender: "John",
-      timestamp: "10:55 AM",
-      content: [
-        { type: "text", text: "✅ The Data Mart has been updated." },
-        { type: "text", text: "AudienceID → ProductView join is now available at the SKU level." },
-        { type: "text", text: "@OWOX you should be able to run the funnel now." }
-      ]
-    }
-  },
-  {
-    type: "reaction",
-    data: { id: "r15", messageId: "21", sender: "James", emoji: "🎉" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r16", messageId: "21", sender: "Aaron", emoji: "🙌" }
-  },
-  {
-    type: "message",
-    data: {
-      id: "22",
-      sender: "OWOX",
-      timestamp: "10:56 AM",
-      content: [
-        { type: "text", text: "Perfect 👌 Running cross-stage funnel analysis now…" }
-      ]
-    }
-  },
-  {
-    type: "message",
-    data: {
-      id: "23",
-      sender: "OWOX",
-      timestamp: "10:59 AM",
-      content: [
-        { type: "heading", text: "TOF → Retargeting → Purchase flow (last 7 days)", level: 3 },
-        { type: "text", text: "Traffic from Meta Broad decreased ~14%, leading to fewer product page views." },
-        { type: "text", text: "That reduction caused the retargeting audience pool to shrink over the week." },
-        { type: "text", text: "As the retargeting pool got smaller, Performance Max had fewer people to re-engage → purchase volume declined." },
-        { type: "text", text: "In short: the drop in retargeting efficiency is driven upstream by weaker TOF performance — PMax itself isn’t the issue; it receives less, lower-intent traffic." },
-        { type: "text", text: "Open Data Sheet: Funnel Flow Breakdown 📄" }
-      ]
-    }
-  },
-  {
-    type: "reaction",
-    data: { id: "r17", messageId: "23", sender: "James", emoji: "🔍" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r18", messageId: "23", sender: "Aaron", emoji: "📊" }
-  },
-  {
-    type: "message",
-    data: {
-      id: "24",
-      sender: "James",
-      timestamp: "11:01 AM",
-      content: [
-        { type: "text", text: "Great – that confirms the dependency. Priority is stabilizing TOF and refreshing Broad creatives." }
-      ]
-    }
-  },
-  {
-    type: "reaction",
-    data: { id: "r19", messageId: "24", sender: "Aaron", emoji: "✅" }
-  },
-  {
-    type: "message",
-    data: {
-      id: "25",
-      sender: "James",
-      timestamp: "11:02 AM",
-      content: [
-        { type: "text", text: "@Aaron – let’s move ahead with replacing the fatigued creative and testing two new variants today." }
-      ]
-    }
-  },
-  {
-    type: "message",
-    data: {
-      id: "26",
-      sender: "Aaron",
-      timestamp: "11:05 AM",
-      content: [
-        { type: "text", text: "Yep. I’ll launch two new versions:" },
-        {
-          type: "list",
-          items: [
-            "UGC with a stronger product-benefit callout",
-            "Lifestyle variant with clearer problem-solution framing (both live before EOD)"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    type: "reaction",
-    data: { id: "r20", messageId: "26", sender: "James", emoji: "🚀" }
   }
 ]
