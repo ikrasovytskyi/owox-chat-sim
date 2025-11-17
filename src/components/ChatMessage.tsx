@@ -41,7 +41,7 @@ const MessageContent = ({ content }: { content: MessageContentType }) => {
   switch (content.type) {
     case "text":
       return (
-        <p className="text-sm leading-snug whitespace-pre-wrap">
+         <p className="text-sm leading-snug whitespace-pre-wrap">
           {content.text.split(/(@\w+|Data Sheet)/).map((part, i) =>
             part.startsWith("@") ? (
               <span key={i} className="font-semibold text-accent">

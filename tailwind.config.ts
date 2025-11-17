@@ -70,7 +70,7 @@ export default {
           rachel: "hsl(var(--chat-rachel))",
           tom: "hsl(var(--chat-tom))",
         },
-        link: {
+         link: {
           DEFAULT: "hsl(var(--link))",
           hover: "hsl(var(--link-hover))",
         },
