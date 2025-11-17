@@ -9,8 +9,16 @@ export const chatEvents: ChatEvent[] =
       sender: "OWOX",
       timestamp: "9:01 AM",
       content: [
-        { type: "text", text: "Here’s your daily campaign performance scan 👇" },
-        { type: "text", text: "I reviewed all campaigns with ≥ 10 clicks and compared yesterday vs 7-day baseline." }
+        { type: "heading", text: "⚙️ Activation Mapper — Q3 2025 Analysis", level: 2 },
+        { type: "text", text: "I analyzed all Q3 2025 accounts, segmented by ICP tier (Enterprise / Mid-Market / SMB)." },
+        { type: "text", text: "Defined true activation as reaching month 4+ with ≥80% user retention and no downgrade signals." },
+        {
+          type: "list",
+          items: [
+            "I identified the minimal sequences (3–7 actions) that ≥70% of truly activated accounts completed.",
+            "Focus: behavioral depth, not surface-level touches."
+          ]
+        }
       ]
     }
   },
@@ -21,35 +29,21 @@ export const chatEvents: ChatEvent[] =
       sender: "OWOX",
       timestamp: "9:02 AM",
       content: [
-        { type: "heading", text: "⚠️ 3 Campaigns Showed Meaningful Efficiency Decline", level: 2 },
-        { type: "text", text: "(≥ 2 of 3 metrics triggered)" },
-        { type: "heading", text: "1️⃣ Meta – Lookalike 3%", level: 3 },
-        { type: "metric", label: "Orders", value: "21 vs 32 avg", change: "↓34%", trend: "down" },
-        { type: "metric", label: "CR", value: "1.1% vs 1.8% avg", change: "↓39%", trend: "down" },
-        { type: "metric", label: "ROAS", value: "1.6 vs 2.3 avg", change: "↓30%", trend: "down" },
-        { type: "metric", label: "CPO", value: "$41 vs $28 avg", change: "↑46%", trend: "up" },
-
-        { type: "heading", text: "2️⃣ Google Search – Mid-Intent", level: 3 },
-        { type: "metric", label: "Orders", value: "18 vs 25 avg", change: "↓28%", trend: "down" },
-        { type: "metric", label: "CR", value: "2.2% vs 3.1% avg", change: "↓29%", trend: "down" },
-        { type: "metric", label: "ROAS", value: "2.4 vs 3.5 avg", change: "↓31%", trend: "down" },
-        { type: "metric", label: "CPO", value: "$54 vs $40 avg", change: "↑35%", trend: "up" },
-
-        { type: "heading", text: "3️⃣ TikTok – Interest Stack #2", level: 3 },
-        { type: "metric", label: "Orders", value: "9 vs 15 avg", change: "↓40%", trend: "down" },
-        { type: "metric", label: "CR", value: "0.6% vs 1.1% avg", change: "↓45%", trend: "down" },
-        { type: "metric", label: "ROAS", value: "1.3 vs 2.0 avg", change: "↓35%", trend: "down" },
-        { type: "metric", label: "CPO", value: "$63 vs $39 avg", change: "↑62%", trend: "up" }
+        { type: "heading", text: "🏢 Enterprise — True Activation Path (73% coverage)", level: 2 },
+        {
+          type: "list",
+          items: [
+            "Connected 2+ data sources",
+            "Created at least 1 Data Model with custom fields",
+            "Ran 3–5 Data Marts using advanced filters or parameters",
+            "Scheduled automated refreshes",
+            "Embedded outputs into downstream tools (Looker Studio / Sheets)"
+          ]
+        },
+        { type: "text", text: "Silent blocker → Teams that skip model customization (use defaults only) churn later despite completing the onboarding checklist." },
+        { type: "text", text: "Drop-off point (look-activated but later churn) → Step 3: they run only 1 generic Data Mart and never use parameters." }
       ]
     }
-  },
-  {
-    type: "reaction",
-    data: { id: "r1", messageId: "2", sender: "James", emoji: "😬" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r2", messageId: "2", sender: "Aaron", emoji: "📉" }
   },
   {
     type: "message",
@@ -58,145 +52,143 @@ export const chatEvents: ChatEvent[] =
       sender: "OWOX",
       timestamp: "9:03 AM",
       content: [
-        { type: "heading", text: "✅ Recommended Actions for Today", level: 2 },
+        { type: "heading", text: "🏬 Mid-Market — True Activation Path (71% coverage)", level: 2 },
         {
           type: "list",
           items: [
-            "Meta – Lookalike 3% → Scale back 20–25% and shift budget to Meta Retargeting (still stable).",
-            "Search – Mid-Intent → Reduce bids ~10–15%, re-allocate to High-Intent Search Terms.",
-            "TikTok – Interest Stack #2 → Pause creatives with low CTR and refresh variants."
+            "Connected 1 primary data source",
+            "Published at least 1 custom metric",
+            "Ran 2+ Data Marts pulling multi-table joins",
+            "Set up alerts or scheduled reports",
+            "Invited teammates (≥3 active)"
           ]
         },
-        { type: "text", text: "Open Data Sheet: Campaign Performance Overview 📄" }
+        { type: "text", text: "Silent blocker → Accounts that invite teammates early but never publish a custom metric look healthy for 2–3 months, then stall and churn." }
       ]
     }
-  },
-  {
-    type: "reaction",
-    data: { id: "r3", messageId: "3", sender: "James", emoji: "✅" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r4", messageId: "3", sender: "Aaron", emoji: "👍" }
   },
   {
     type: "message",
     data: {
       id: "4",
-      sender: "James",
-      timestamp: "9:08 AM",
+      sender: "OWOX",
+      timestamp: "9:03 AM",
       content: [
-        { type: "text", text: "@Aaron let’s start by pulling back Mid-Intent Search and shifting ~20% to High-Intent. I’m okay tightening bids today." }
+        { type: "heading", text: "💼 SMB — True Activation Path (75% coverage)", level: 2 },
+        {
+          type: "list",
+          items: [
+            "Connected 1 data source",
+            "Ran multiple prebuilt templates",
+            "Customized filters or dimensions",
+            "Configured one recurring export (Sheets / Slack)"
+          ]
+        },
+        { type: "text", text: "Silent blocker → SMBs that never configure a recurring export look activated but after the first dashboard 'wow moment', they stop returning." },
+        { type: "text", text: "📄 Updated Data Sheet: Activation Paths by ICP + Silent Blockers" }
       ]
     }
   },
+  { type: "reaction", data: { id: "r1", messageId: "4", sender: "Sarah", emoji: "👏" } },
   {
     type: "message",
     data: {
       id: "5",
-      sender: "Aaron",
-      timestamp: "9:12 AM",
+      sender: "Sarah",
+      timestamp: "9:18 AM",
       content: [
-        { type: "text", text: "Got it. Before reallocating spend → @OWOX can you confirm High-Intent Search is still holding efficiency?" }
+        { type: "text", text: "@OWOX can you show drop-off % at each node for Enterprise accounts? I want to see where the pseudo-activated ones diverge. 📊" }
       ]
     }
   },
+  { type: "reaction", data: { id: "r2", messageId: "5", sender: "David", emoji: "📊" } },
   {
     type: "message",
     data: {
       id: "6",
       sender: "OWOX",
-      timestamp: "9:12 AM",
+      timestamp: "9:18 AM",
       content: [
-        { type: "text", text: "Yes – High-Intent Search remains strong:" },
-        { type: "metric", label: "Orders", value: "+12% vs 7-day avg", trend: "up" },
-        { type: "metric", label: "CR", value: "4.9%", trend: "steady" },
-        { type: "metric", label: "CPO", value: "$24–$26", trend: "steady" },
-        { type: "metric", label: "ROAS", value: "3.8x", trend: "steady" },
-        { type: "text", text: "Open Data Sheet: High Intent Search Breakdown 🔎" }
+        { type: "text", text: "Computing node-level drop-offs… (working…) ⚙️" }
       ]
     }
-  },
-  {
-    type: "reaction",
-    data: { id: "r5", messageId: "6", sender: "James", emoji: "📊" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r6", messageId: "6", sender: "Aaron", emoji: "✅" }
   },
   {
     type: "message",
     data: {
       id: "7",
-      sender: "Aaron",
-      timestamp: "9:18 AM",
+      sender: "OWOX",
+      timestamp: "9:20 AM",
       content: [
-        { type: "text", text: "Great. @OWOX break down High-Intent by ad group — which ones should we actually send the additional spend to?" }
+        { type: "heading", text: "🏢 Enterprise — Activation Graph (Drop-off %)", level: 2 },
+        {
+          type: "list",
+          items: [
+            "Connected ≥2 sources → 100% start",
+            "Built custom model → drop to 82%",
+            "Ran 3–5 advanced Data Marts → drop to 61%",
+            "Scheduled refreshes → drop to 49%",
+            "Embedded outputs → final: 42% true activation"
+          ]
+        },
+        { type: "text", text: "Pseudo-activated accounts → Most diverge at step 3 – they run one generic report then stop." },
+        { type: "text", text: "📄 Open Data Sheet: Enterprise Activation DAG" }
       ]
     }
   },
+  { type: "reaction", data: { id: "r3", messageId: "7", sender: "Sarah", emoji: "👀" } },
+  { type: "reaction", data: { id: "r4", messageId: "7", sender: "David", emoji: "👏" } },
   {
     type: "message",
     data: {
       id: "8",
-      sender: "OWOX",
-      timestamp: "9:18 AM",
+      sender: "David",
+      timestamp: "9:44 AM",
       content: [
-        { type: "text", text: "Analyzing ad group-level efficiency… (working…)" }
+        { type: "text", text: "Nice. @OWOX – can you compare the churned vs activated accounts for Mid-Market and show the single earliest divergence action? 💡" }
       ]
     }
-  }
-,
+  },
   {
     type: "message",
     data: {
       id: "9",
       sender: "OWOX",
-      timestamp: "9:20 AM",
+      timestamp: "9:44 AM",
       content: [
-        { type: "heading", text: "High-Intent Search – Ad Group Performance", level: 2 },
-        {
-          type: "list",
-          items: [
-            "Brand Core – CPO $18, CR 5.5%",
-            "High Intent | Product Fit – CPO $22, CR 5.0%",
-            "Competitor Defender – CPO $31, CR 3.7%"
-          ]
-        },
-        { type: "text", text: "Recommendation → Shift spend toward Brand Core + Product Fit, cut Competitor Defender by ~30%." },
-        { type: "text", text: "Open Data Sheet: Ad Group View 📄" }
+        { type: "text", text: "Analyzing earliest divergence… (working…) 🧠" }
       ]
     }
-  },
-  {
-    type: "reaction",
-    data: { id: "r7", messageId: "9", sender: "James", emoji: "🎯" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r8", messageId: "9", sender: "Aaron", emoji: "📈" }
   },
   {
     type: "message",
     data: {
       id: "10",
-      sender: "James",
-      timestamp: "9:22 AM",
+      sender: "OWOX",
+      timestamp: "9:47 AM",
       content: [
-        { type: "text", text: "Perfect. Let’s roll that reallocation today." },
-        { type: "text", text: "Also, @OWOX show me TikTok – Interest Stack #2. I want to confirm the drop isn’t caused by creative fatigue." }
+        { type: "heading", text: "🏬 Mid-Market — Earliest Divergence (Day 7–12)", level: 2 },
+        {
+          type: "list",
+          items: [
+            "Activated: 68% publish at least one custom metric",
+            "Later-churn: only 22% publish any metric"
+          ]
+        },
+        { type: "text", text: "This is the first measurable fork in the path. 📄 Updated in Data Sheet: Mid-Market Early Divergence" }
       ]
     }
   },
+  { type: "reaction", data: { id: "r5", messageId: "10", sender: "David", emoji: "💡" } },
+    { type: "reaction", data: { id: "r6", messageId: "10", sender: "Sarah", emoji: "👀" } },
   {
     type: "message",
     data: {
       id: "11",
-      sender: "OWOX",
-      timestamp: "9:23 AM",
+      sender: "Sarah",
+      timestamp: "10:11 AM",
       content: [
-        { type: "text", text: "Checking TikTok creative-level performance…" }
+        { type: "text", text: "Good. @OWOX can you check whether SMBs who fail on recurring export ever compensate with high in-app engagement? Or is export truly the mandatory milestone?" }
       ]
     }
   },
@@ -205,101 +197,41 @@ export const chatEvents: ChatEvent[] =
     data: {
       id: "12",
       sender: "OWOX",
-      timestamp: "9:25 AM",
+      timestamp: "10:11 AM",
       content: [
-        { type: "heading", text: "Creative Performance – TikTok Interest Stack #2", level: 2 },
-        {
-          type: "list",
-          items: [
-            "Creative A (UGC Product Demo) – CR 0.9%, CTR stable",
-            "Creative B (Static Image) – CR 0.4%, CTR ↓ 27%",
-            "Creative C (Lifestyle) – CR 0.6%, CTR ↓ 15%"
-          ]
-        },
-        { type: "text", text: "Most decline driven by Creative B fatigue → rotate out or refresh variant." },
-        { type: "text", text: "Open Data Sheet: TikTok Creative Breakdown 📄" }
+        { type: "text", text: "Checking engagement substitutes… (working…) ⚙️" }
       ]
     }
-  },
-  {
-    type: "reaction",
-    data: { id: "r9", messageId: "12", sender: "James", emoji: "👀" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r10", messageId: "12", sender: "Aaron", emoji: "💡" }
   },
   {
     type: "message",
     data: {
       id: "13",
-      sender: "Aaron",
-      timestamp: "9:27 AM",
+      sender: "OWOX",
+      timestamp: "10:13 AM",
       content: [
-        { type: "text", text: "Got it. I’ll pause Creative B and prep two new UGC versions with updated hooks." }
+        { type: "heading", text: "📊 SMB – Is In-App Engagement a Substitute?", level: 2 },
+        {
+          type: "list",
+          items: [
+            "Across churned SMBs: even high in-app usage (≥12 sessions in month 1) does NOT correlate with retention unless at least one recurring export is active.",
+            "So recurring exports are a hard activation milestone, not optional."
+          ]
+        },
+        { type: "text", text: "📄 Added New Data Sheet: SMB Activation – Export as Non-Negotiable" }
       ]
     }
   },
+  { type: "reaction", data: { id: "r7", messageId: "13", sender: "Sarah", emoji: "📈" } },
+ { type: "reaction", data: { id: "r8", messageId: "13", sender: "David", emoji: "📊" } },
   {
     type: "message",
     data: {
       id: "14",
-      sender: "James",
-      timestamp: "9:29 AM",
+      sender: "David",
+      timestamp: "10:36 AM",
       content: [
-        { type: "text", text: "Awesome. Once live, we’ll check ROAS tomorrow." },
-        { type: "text", text: "@John please make sure tomorrow’s report compares old vs new creatives so we can measure lift." }
-      ]
-    }
-  },
-  {
-    type: "message",
-    data: {
-      id: "15",
-      sender: "John",
-      timestamp: "9:30 AM",
-      content: [
-        { type: "text", text: "On it. I’ll update the Data Mart filters to tag new creatives and capture ROAS delta automatically." },
-        { type: "text", text: "Tomorrow’s dashboard will include side-by-side comparison for quick review." }
-      ]
-    }
-  },
-  {
-    type: "reaction",
-    data: { id: "r11", messageId: "15", sender: "James", emoji: "🎉" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r12", messageId: "15", sender: "Aaron", emoji: "🚀" }
-  },
-  {
-    type: "message",
-    data: {
-      id: "16",
-      sender: "OWOX",
-      timestamp: "9:32 AM",
-      content: [
-        { type: "text", text: "Thanks team! I’ll keep monitoring the efficiency metrics post-creative update." },
-        { type: "text", text: "If ROAS stabilizes or rises by ≥10%, I’ll flag it in tomorrow’s summary automatically." }
-      ]
-    }
-  },
-  {
-    type: "reaction",
-    data: { id: "r13", messageId: "16", sender: "James", emoji: "🙌" }
-  },
-  {
-    type: "reaction",
-    data: { id: "r14", messageId: "16", sender: "Aaron", emoji: "🔥" }
-  },
-  {
-    type: "message",
-    data: {
-      id: "17",
-      sender: "James",
-      timestamp: "9:35 AM",
-      content: [
-        { type: "text", text: "Perfect work everyone. Let’s review the updated results in tomorrow’s report." }
+        { type: "text", text: "Perfect – keep it compact like this. Let’s prioritize: (1) Enterprise: push depth in step 3 (advanced Data Marts). (2) Mid-Market: early custom metric nudges. (3) SMB: automated exports surfaced earlier in onboarding. 🚀" }
       ]
     }
   }
