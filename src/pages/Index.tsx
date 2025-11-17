@@ -12,7 +12,7 @@ const Index = () => {
   useEffect(() => {
     if (currentIndex < chatEvents.length) {
       const currentEvent = chatEvents[currentIndex];
-      const delay = currentEvent.type === "reaction" ? 1500 : 5000;
+      const delay = currentEvent.type === "reaction" ? 3000 : 5000;
       
       const timer = setTimeout(() => {
         setDisplayedEvents((prev) => [...prev, chatEvents[currentIndex]]);
