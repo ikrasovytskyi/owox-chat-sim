@@ -9,16 +9,18 @@ export const chatEvents: ChatEvent[] =
       sender: "OWOX",
       timestamp: "9:01 AM",
       content: [
-        { type: "heading", text: "⚙️ Activation Mapper — Q3 2025 Analysis", level: 2 },
-        { type: "text", text: "I analyzed all Q3 2025 accounts, segmented by ICP tier (Enterprise / Mid-Market / SMB)." },
-        { type: "text", text: "Defined true activation as reaching month 4+ with ≥80% user retention and no downgrade signals." },
+        { type: "text", text: "I reviewed all reps’ pipelines and activity from last week based on your detection rules. 📊" },
+        { type: "heading", text: "Here’s the team-level summary:", level: 2 },
         {
           type: "list",
           items: [
-            "I identified the minimal sequences (3–7 actions) that ≥70% of truly activated accounts completed.",
-            "Focus: behavioral depth, not surface-level touches."
+            "Deals with meaningful activity ↓11% across the team",
+            "Average deal movement ↓8% vs 4-week average",
+            "Prospect engagement (reply rate + call acceptance) ↓6%",
+            "7 deals across the team stalled ≥14 days"
           ]
-        }
+        },
+        { type: "text", text: "Please pay attention to the results for @Michael and @Sarah 👇" }
       ]
     }
   },
@@ -29,22 +31,23 @@ export const chatEvents: ChatEvent[] =
       sender: "OWOX",
       timestamp: "9:02 AM",
       content: [
-        { type: "heading", text: "🏢 Enterprise — True Activation Path (73% coverage)", level: 2 },
+        { type: "heading", text: "⚠️ @Michael shows a momentum drop", level: 2 },
+        { type: "text", text: "Deals with meaningful activity last week ↓27% vs 4-week average." },
+        { type: "text", text: "👉 Main reason: @Michael contacted only 3 out of 7 deals at the closing stages." },
+        { type: "heading", text: "4 stalled deals ≥14 days:", level: 3 },
         {
           type: "list",
           items: [
-            "Connected 2+ data sources",
-            "Created at least 1 Data Model with custom fields",
-            "Ran 3–5 Data Marts using advanced filters or parameters",
-            "Scheduled automated refreshes",
-            "Embedded outputs into downstream tools (Looker Studio / Sheets)"
+            "Acme Platform – $95K ARR → customer waiting for internal tech approval",
+            "BlueFin – $40K ARR → no response after renewal terms were sent",
+            "QuickShift – $70K ARR → next step missing; no follow-up logged",
+            "FreightFlow – $55K ARR → customer paused communication after pricing summary"
           ]
-        },
-        { type: "text", text: "Silent blocker → Teams that skip model customization (use defaults only) churn later despite completing the onboarding checklist." },
-        { type: "text", text: "Drop-off point (look-activated but later churn) → Step 3: they run only 1 generic Data Mart and never use parameters." }
+        }
       ]
     }
   },
+  { type: "reaction", data: { id: "r1", messageId: "2", sender: "Michael", emoji: "😬" } },
   {
     type: "message",
     data: {
@@ -52,64 +55,87 @@ export const chatEvents: ChatEvent[] =
       sender: "OWOX",
       timestamp: "9:03 AM",
       content: [
-        { type: "heading", text: "🏬 Mid-Market — True Activation Path (71% coverage)", level: 2 },
+        { type: "heading", text: "⚠️ @Sarah has early slowdown signals", level: 2 },
         {
           type: "list",
           items: [
-            "Connected 1 primary data source",
-            "Published at least 1 custom metric",
-            "Ran 2+ Data Marts pulling multi-table joins",
-            "Set up alerts or scheduled reports",
-            "Invited teammates (≥3 active)"
+            "Deals with meaningful activity last week ↓22%",
+            "👉 Main reason: Sarah has 15% fewer deals in pipeline vs last week’s average."
           ]
         },
-        { type: "text", text: "Silent blocker → Accounts that invite teammates early but never publish a custom metric look healthy for 2–3 months, then stall and churn." }
+        { type: "heading", text: "2 mid-stage deals stalled:", level: 3 },
+        {
+          type: "list",
+          items: [
+            "NeuroPay, upsell – $85K ARR → champion silent after internal budget review",
+            "GreenWare, upsell – $60K ARR → no confirmed next step after demo"
+          ]
+        },
+        { type: "heading", text: "3 key prospects unresponsive ≥72h:", level: 3 },
+        {
+          type: "list",
+          items: [
+            "SignalHive – $32K ARR → waiting on requested follow-up materials",
+            "CloudNest – $45K ARR → no reply after commercial proposal",
+            "DataLoop – $38K ARR → procurement requested pricing breakdown; no response since"
+          ]
+        }
       ]
     }
   },
+  { type: "reaction", data: { id: "r2", messageId: "3", sender: "Sarah", emoji: "😕" } },
+  { type: "reaction", data: { id: "r3", messageId: "3", sender: "Anna", emoji: "👀" } },
   {
     type: "message",
     data: {
       id: "4",
       sender: "OWOX",
-      timestamp: "9:03 AM",
+      timestamp: "9:05 AM",
       content: [
-        { type: "heading", text: "💼 SMB — True Activation Path (75% coverage)", level: 2 },
+        { type: "heading", text: "Suggested Focus for Today", level: 2 },
+        { type: "heading", text: "@Michael → focus on moving deals at the closing stage.", level: 3 },
         {
           type: "list",
           items: [
-            "Connected 1 data source",
-            "Ran multiple prebuilt templates",
-            "Customized filters or dimensions",
-            "Configured one recurring export (Sheets / Slack)"
+            "Acme → schedule the validation call",
+            "QuickShift → add next step + notify champion",
+            "Re-prioritize remaining closing-stage deals (BlueFin, FreightFlow)"
           ]
         },
-        { type: "text", text: "Silent blocker → SMBs that never configure a recurring export look activated but after the first dashboard 'wow moment', they stop returning." },
-        { type: "text", text: "📄 Updated Data Sheet: Activation Paths by ICP + Silent Blockers" }
+        { type: "heading", text: "@Sarah → focus on unresponsive prospects and pipeline refill.", level: 3 },
+        {
+          type: "list",
+          items: [
+            "NeuroPay → send next-step nudge",
+            "GreenWare → confirm post-demo action",
+            "Add 5 new deals to the pipeline today"
+          ]
+        }
       ]
     }
   },
-  { type: "reaction", data: { id: "r1", messageId: "4", sender: "Sarah", emoji: "👏" } },
+  { type: "reaction", data: { id: "r4", messageId: "4", sender: "Sarah", emoji: "💪" } },
+  { type: "reaction", data: { id: "r5", messageId: "4", sender: "Michael", emoji: "👍" } },
   {
     type: "message",
     data: {
       id: "5",
-      sender: "Sarah",
-      timestamp: "9:18 AM",
+      sender: "Anna",
+      timestamp: "9:14 AM",
       content: [
-        { type: "text", text: "@OWOX can you show drop-off % at each node for Enterprise accounts? I want to see where the pseudo-activated ones diverge. 📊" }
+        { type: "text", text: "@Michael, let’s unblock Acme and QuickShift today before our 4 PM sync. I’d like you to pinpoint the real reason why they’re stalled. 🔍" }
       ]
     }
   },
-  { type: "reaction", data: { id: "r2", messageId: "5", sender: "David", emoji: "📊" } },
+  { type: "reaction", data: { id: "r6", messageId: "5", sender: "Michael", emoji: "✅" } },
   {
     type: "message",
     data: {
       id: "6",
-      sender: "OWOX",
-      timestamp: "9:18 AM",
+      sender: "Michael",
+      timestamp: "9:27 AM",
       content: [
-        { type: "text", text: "Computing node-level drop-offs… (working…) ⚙️" }
+        { type: "text", text: "On it – updating Acme and QuickShift now. Will move to BlueFin and FreightFlow after. 🚀" }
       ]
     }
   },
@@ -117,35 +143,22 @@ export const chatEvents: ChatEvent[] =
     type: "message",
     data: {
       id: "7",
-      sender: "OWOX",
-      timestamp: "9:20 AM",
+      sender: "Anna",
+      timestamp: "9:28 AM",
       content: [
-        { type: "heading", text: "🏢 Enterprise — Activation Graph (Drop-off %)", level: 2 },
-        {
-          type: "list",
-          items: [
-            "Connected ≥2 sources → 100% start",
-            "Built custom model → drop to 82%",
-            "Ran 3–5 advanced Data Marts → drop to 61%",
-            "Scheduled refreshes → drop to 49%",
-            "Embedded outputs → final: 42% true activation"
-          ]
-        },
-        { type: "text", text: "Pseudo-activated accounts → Most diverge at step 3 – they run one generic report then stop." },
-        { type: "text", text: "📄 Open Data Sheet: Enterprise Activation DAG" }
+        { type: "text", text: "@Sarah, let's strengthen the offer for GreenWare. See if anyone on their team has tried the new AI features we showed off in the demo. 🤖" }
       ]
     }
   },
-  { type: "reaction", data: { id: "r3", messageId: "7", sender: "Sarah", emoji: "👀" } },
-  { type: "reaction", data: { id: "r4", messageId: "7", sender: "David", emoji: "👏" } },
+  { type: "reaction", data: { id: "r7", messageId: "7", sender: "Sarah", emoji: "👀" } },
   {
     type: "message",
     data: {
       id: "8",
-      sender: "David",
-      timestamp: "9:44 AM",
+      sender: "Sarah",
+      timestamp: "9:33 AM",
       content: [
-        { type: "text", text: "Nice. @OWOX – can you compare the churned vs activated accounts for Mid-Market and show the single earliest divergence action? 💡" }
+        { type: "text", text: "@OWOX, can you provide product activity for GreenWare users for the last month?" }
       ]
     }
   },
@@ -154,9 +167,9 @@ export const chatEvents: ChatEvent[] =
     data: {
       id: "9",
       sender: "OWOX",
-      timestamp: "9:44 AM",
+      timestamp: "9:33 AM",
       content: [
-        { type: "text", text: "Analyzing earliest divergence… (working…) 🧠" }
+        { type: "text", text: "Analyzing… (working…) ⚙️" }
       ]
     }
   },
@@ -165,30 +178,21 @@ export const chatEvents: ChatEvent[] =
     data: {
       id: "10",
       sender: "OWOX",
-      timestamp: "9:47 AM",
+      timestamp: "9:35 AM",
       content: [
-        { type: "heading", text: "🏬 Mid-Market — Earliest Divergence (Day 7–12)", level: 2 },
-        {
-          type: "list",
-          items: [
-            "Activated: 68% publish at least one custom metric",
-            "Later-churn: only 22% publish any metric"
-          ]
-        },
-        { type: "text", text: "This is the first measurable fork in the path. 📄 Updated in Data Sheet: Mid-Market Early Divergence" }
+        { type: "text", text: "Done. Here’s your Data Sheet with last month's activity. 📄" }
       ]
     }
   },
-  { type: "reaction", data: { id: "r5", messageId: "10", sender: "David", emoji: "💡" } },
-    { type: "reaction", data: { id: "r6", messageId: "10", sender: "Sarah", emoji: "👀" } },
+  { type: "reaction", data: { id: "r8", messageId: "10", sender: "Sarah", emoji: "📊" } },
   {
     type: "message",
     data: {
       id: "11",
       sender: "Sarah",
-      timestamp: "10:11 AM",
+      timestamp: "9:36 AM",
       content: [
-        { type: "text", text: "Good. @OWOX can you check whether SMBs who fail on recurring export ever compensate with high in-app engagement? Or is export truly the mandatory milestone?" }
+        { type: "text", text: "@John I don’t see any AI Feature activity for GreenWare. Can you confirm whether they used AI Features at all?" }
       ]
     }
   },
@@ -196,42 +200,103 @@ export const chatEvents: ChatEvent[] =
     type: "message",
     data: {
       id: "12",
-      sender: "OWOX",
-      timestamp: "10:11 AM",
+      sender: "John",
+      timestamp: "11:32 AM",
       content: [
-        { type: "text", text: "Checking engagement substitutes… (working…) ⚙️" }
+        { type: "text", text: "@Sarah, AI Features activity is stored in separate tables. If needed, I can extend the Activity Data Mart today and include AI Feature events. 🧠" }
       ]
     }
   },
+  { type: "reaction", data: { id: "r9", messageId: "12", sender: "Sarah", emoji: "💡" } },
   {
     type: "message",
     data: {
       id: "13",
-      sender: "OWOX",
-      timestamp: "10:13 AM",
+      sender: "Sarah",
+      timestamp: "11:34 AM",
       content: [
-        { type: "heading", text: "📊 SMB – Is In-App Engagement a Substitute?", level: 2 },
-        {
-          type: "list",
-          items: [
-            "Across churned SMBs: even high in-app usage (≥12 sessions in month 1) does NOT correlate with retention unless at least one recurring export is active.",
-            "So recurring exports are a hard activation milestone, not optional."
-          ]
-        },
-        { type: "text", text: "📄 Added New Data Sheet: SMB Activation – Export as Non-Negotiable" }
+        { type: "text", text: "@John yes, please – that would help a lot. 🙏" }
       ]
     }
   },
-  { type: "reaction", data: { id: "r7", messageId: "13", sender: "Sarah", emoji: "📈" } },
- { type: "reaction", data: { id: "r8", messageId: "13", sender: "David", emoji: "📊" } },
   {
     type: "message",
     data: {
       id: "14",
-      sender: "David",
-      timestamp: "10:36 AM",
+      sender: "John",
+      timestamp: "1:39 PM",
       content: [
-        { type: "text", text: "Perfect – keep it compact like this. Let’s prioritize: (1) Enterprise: push depth in step 3 (advanced Data Marts). (2) Mid-Market: early custom metric nudges. (3) SMB: automated exports surfaced earlier in onboarding. 🚀" }
+        { type: "text", text: "@Sarah done. You can refresh your data. ✅" }
+      ]
+    }
+  },
+  {
+    type: "message",
+    data: {
+      id: "15",
+      sender: "Sarah",
+      timestamp: "1:40 PM",
+      content: [
+        { type: "text", text: "@John super quick – thank you again. 🙌" }
+      ]
+    }
+  },
+  { type: "reaction", data: { id: "r10", messageId: "15", sender: "John", emoji: "👍" } },
+  {
+    type: "message",
+    data: {
+      id: "16",
+      sender: "Sarah",
+      timestamp: "1:41 PM",
+      content: [
+        { type: "text", text: "@OWOX, please refresh the sheet with new activity fields. 📑" }
+      ]
+    }
+  },
+  {
+    type: "message",
+    data: {
+      id: "17",
+      sender: "OWOX",
+      timestamp: "1:42 PM",
+      content: [
+        { type: "text", text: "Working on it… ⚙️" }
+      ]
+    }
+  },
+  {
+    type: "message",
+    data: {
+      id: "18",
+      sender: "OWOX",
+      timestamp: "1:43 PM",
+      content: [
+        { type: "text", text: "Updated – here’s the latest Data Sheet. AI Feature activity now appears as rows with “AI” in the event name. ✅" }
+      ]
+    }
+  },
+  { type: "reaction", data: { id: "r11", messageId: "18", sender: "Sarah", emoji: "👏" } },
+  { type: "reaction", data: { id: "r12", messageId: "18", sender: "Anna", emoji: "🔥" } },
+  {
+    type: "message",
+    data: {
+      id: "19",
+      sender: "Sarah",
+      timestamp: "1:45 PM",
+      content: [
+        { type: "text", text: "@Anna GreenWare did use AI Features – but only once. 🤔" }
+      ]
+    }
+  },
+  { type: "reaction", data: { id: "r13", messageId: "19", sender: "Anna", emoji: "💡" } },
+  {
+    type: "message",
+    data: {
+      id: "20",
+      sender: "Anna",
+      timestamp: "1:50 PM",
+      content: [
+        { type: "text", text: "Perfect – I’ll explain how to address this in the call during our sync today. 📞" }
       ]
     }
   }

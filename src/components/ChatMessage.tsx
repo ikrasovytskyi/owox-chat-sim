@@ -67,7 +67,19 @@ const MessageContent = ({ content }: { content: MessageContentType }) => {
             (content.level === 2 || content.level === 3) && "text-sm font-bold mt-1 mb-0.5"
           )}
         >
-          {content.text}
+          {content.text.split(/(@\w+|Data Sheet)/).map((part, i) =>
+            part.startsWith("@") ? (
+              <span key={i} className="font-semibold text-accent">
+                {part}
+              </span>
+            ) : part === "Data Sheet" ? (
+              <span key={i} className="font-semibold text-link underline hover:text-link-hover cursor-pointer transition-colors">
+                {part}
+              </span>
+            ) : (
+              <span key={i}>{part}</span>
+            )
+          )}
         </HeadingTag>
       );
 

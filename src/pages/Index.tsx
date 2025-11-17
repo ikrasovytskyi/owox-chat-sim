@@ -12,8 +12,8 @@ const Index = () => {
   useEffect(() => {
     if (currentIndex < chatEvents.length) {
       const currentEvent = chatEvents[currentIndex];
-      const delay = currentEvent.type === "reaction" ? 1500 : 5000;
-      
+      const delay = currentEvent.type === "reaction" ? 4000 : 6000;
+
       const timer = setTimeout(() => {
         setDisplayedEvents((prev) => [...prev, chatEvents[currentIndex]]);
         setCurrentIndex((prev) => prev + 1);
@@ -39,9 +39,9 @@ const Index = () => {
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">#product</h1>
+              <h1 className="text-xl font-bold text-foreground">#sales</h1>
               <p className="text-sm text-muted-foreground">
-                Powered by OWOX • Tuesday, November 12
+                Powered by OWOX • Tuesday, November 18
               </p>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Index = () => {
               const isAnimating = index === displayedEvents.length - 1;
               
               if (event.type === "message") {
-  const typingUsers = ["Anna", "James", "Julia", "David", "Sarah","Rachel"];
+  const typingUsers = ["Anna", "James", "Julia", "David", "Sarah","Ethan", "Michael", "Rachel"];
   const showTyping = typingUsers.includes(event.data.sender);
 
   return (
@@ -82,7 +82,14 @@ const Index = () => {
 
             })}
             
-            
+            {currentIndex >= chatEvents.length && (
+              <div className="p-4 text-center">
+                <div className="inline-flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 rounded-full px-4 py-2">
+                  <Sparkles className="w-4 h-4" />
+                  <span>End of conversation</span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </main>
