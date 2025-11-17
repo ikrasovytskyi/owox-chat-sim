@@ -13,7 +13,7 @@ const Index = () => {
     if (currentIndex < chatEvents.length) {
       const currentEvent = chatEvents[currentIndex];
       const delay = currentEvent.type === "reaction" ? 4000 : 6000;
-
+      
       const timer = setTimeout(() => {
         setDisplayedEvents((prev) => [...prev, chatEvents[currentIndex]]);
         setCurrentIndex((prev) => prev + 1);
