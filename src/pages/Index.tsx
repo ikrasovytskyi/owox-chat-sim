@@ -12,7 +12,7 @@ const Index = () => {
   useEffect(() => {
     if (currentIndex < chatEvents.length) {
       const currentEvent = chatEvents[currentIndex];
-      const delay = currentEvent.type === "reaction" ? 3000 : 5000;
+      const delay = currentEvent.type === "reaction" ? 4000 : 6000;
       
       const timer = setTimeout(() => {
         setDisplayedEvents((prev) => [...prev, chatEvents[currentIndex]]);
@@ -39,9 +39,9 @@ const Index = () => {
               <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">#marketing-performance-insights</h1>
+              <h1 className="text-xl font-bold text-foreground">#sales</h1>
               <p className="text-sm text-muted-foreground">
-                Powered by OWOX • Tuesday, Oct 28
+                Powered by OWOX • Tuesday, November 18
               </p>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Index = () => {
               const isAnimating = index === displayedEvents.length - 1;
               
               if (event.type === "message") {
-  const typingUsers = ["Anna", "James", "Julia", "David", "Rachel"];
+  const typingUsers = ["Anna", "James", "Julia", "David", "Sarah","Ethan", "Michael", "Rachel"];
   const showTyping = typingUsers.includes(event.data.sender);
 
   return (

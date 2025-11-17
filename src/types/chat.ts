@@ -33,9 +33,9 @@ export const SENDER_INFO: Record<MessageSender, { name: string; role: string; co
   James: { name: "James", role: "Head of Marketing", color: "chat-james", avatar: "james-avatar" },
   Aaron: { name: "Aaron", role: "Marketing Manager", color: "chat-aaron", avatar: "aaron-avatar" },
   Julia: { name: "Julia", role: "Head of Finance", color: "chat-julia", avatar: "julia-avatar" },
-  Michael: { name: "Michael", role: "Financial Analyst", color: "chat-michael", avatar: "michael-avatar" },
+  Michael: { name: "Michael", role: "Sales Operations Manager", color: "chat-michael", avatar: "michael-avatar" },
   David: { name: "David", role: "Head of Product", color: "chat-david", avatar: "david-avatar" },
-  Sarah: { name: "Sarah", role: "Product Manager", color: "chat-sarah", avatar: "sarah-avatar" },
+  Sarah: { name: "Sarah", role: "Sales Operations Manager", color: "chat-sarah", avatar: "sarah-avatar" },
   Rachel: { name: "Rachel", role: "Head of Operations", color: "chat-rachel", avatar: "rachel-avatar" },
   Tom: { name: "Tom", role: "Operations Coordinator", color: "chat-tom", avatar: "tom-avatar" },
 };
